@@ -24,8 +24,8 @@ renamed as (
         
         -- Date and Time Situation:
         --event_time,
-        timestamp_millis(event_time) as date_time_utc,
-        date(timestamp_millis(event_time)) as wse_date_output,
+        timestamp_millis(event_time) as event_time_utc,
+        date(timestamp_millis(event_time)) as event_date,
         
         -- Event Details:
         cast(event_name as string) as event_name,

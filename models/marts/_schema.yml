@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: fct_platform_funnel
+    description: "Funnel metrics comparing checkout and order placement performance across platforms."
+    columns:
+      - name: platform
+        data_type: string
+        description: "The platform on which the funnel metrics are being tracked."
+        data_tests:
+          - not_null
+          - unique
+          - accepted_values:
+              arguments:
+                values: ['Android', 'iOS', 'web', 'Desktop', 'Other']
+
+      - name: reached_checkout
+        data_type: int64
+        description: "How many users reached the checkout page."
+        data_tests:
+          - not_null
+
+      - name: placed_order
+        data_type: int64
+        description: "How many users placed an order."
+        data_tests:
+          - not_null
+
+      - name: conversion_rate
+        data_type: float64
+        description: "Conversion rate from checkout to order placement."
+        data_tests:
+          - not_null
+
+      - name: avg_time_to_order_seconds
+        data_type: float64
+        description: "Average time it takes for a user to place an order after reaching the checkout page."
+        data_tests:
+          - not_null
+
+  - name: fct_customer_funnel
+    description: "Fact table containing detailed records of user interactions with the checkout and order placement process."
+    columns:
+      - name: customer_id
+        data_type: int64
+        description: "Unique identifier for each customer."
+        data_tests:
+          - not_null
+          - unique
+      - name: platform
+        data_type: string
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Android', 'iOS', 'web', 'Desktop', 'Other']
+
+      - name: reached_checkout
+        data_type: boolean
+        description: "Indicates whether the user reached the checkout page."
+        data_tests:
+          - not_null
+
+      - name: placed_order
+        data_type: boolean
+        description: "Indicates whether the user placed an order."
+        data_tests:
+          - not_null
