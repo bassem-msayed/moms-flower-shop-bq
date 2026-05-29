@@ -1,4 +1,4 @@
--- 2 Questions by platform:
+-- Questions by platform:
 -- 1. Customer who reach the checkout page
 -- 2. Customer who complete the purchase
 -- 3. Conversion rate & average time to order
