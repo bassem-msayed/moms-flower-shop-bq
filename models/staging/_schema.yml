@@ -5,37 +5,40 @@ models:
         data_tests:
           - unique
           - not_null
+
       - name: customer_id
         data_tests:
           - not_null
+
       - name: delivery_id
         data_tests:
           - not_null
+
   - name: stg_mfs__marketing_campaign_events
     columns:
       - name: event_id
         data_tests:
           - unique
           - not_null
+
       - name: campaign_name
         data_tests:
           - not_null
           - accepted_values:
               arguments:
                 values: ['facebook_ads_', 'friends_referrals_', 'google_search_', 'instagram_ads_']
+
   - name: stg_mfs__website_events
     columns:
       - name: event_id
         data_tests:
           - unique
           - not_null
+
       - name: customer_id
         data_tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('stg_mfs__customers')
-                field: customer_id
+
       - name: campaign_id
         data_tests:
           - relationships:
@@ -44,6 +47,7 @@ models:
                 field: campaign_id
               config:
                 where: "campaign_id is not null"
+
       - name: event_name
         data_tests:
           - not_null

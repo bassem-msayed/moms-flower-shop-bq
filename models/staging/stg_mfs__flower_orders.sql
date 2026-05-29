@@ -1,3 +1,6 @@
+{{ config(enabled=false) }}
+-- Keeping this model disabled as it is only used for testing and is not needed in production.
+
 with source_data as (
 select 
     order_id,
