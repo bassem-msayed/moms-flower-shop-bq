@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: fct_platform_funnel
-    description: "Funnel metrics comparing checkout and order placement performance across platforms."
+    description: "Funnel metrics comparing checkout and order placement performance across platforms, 1 row per platform."
     columns:
       - name: platform
         data_type: string

@@ -28,6 +28,10 @@ Staging models live in `models/staging/`. These are lightweight views, prefixed 
 ### `marts`
 Marts models live in `models/marts/`. These models consume staging outputs and produce business-facing tables and views (aggregations, fact tables, etc). They may be materialized as tables, incremental models, or ephemeral models depending on performance and use case.
 
+### 'primary output'
+1. **Customer funnel**
+2. **platform funnel**
+
 ## Model Lineage
 
 ```
@@ -35,5 +39,5 @@ Raw (source tables)
     ↓  
 Staging Models (Views with stg_ prefix)
     ↓
-Marts Models 
+Marts Models (Tables with fct_ prefix)
 ```
