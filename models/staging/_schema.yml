@@ -32,8 +32,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['facebook_ads_', 'friends_referrals_', 'google_search_', 'instagram_ads_']
+              values: ['facebook_ads_', 'friends_referrals_', 'google_search_', 'instagram_ads_']
 
   - name: stg_mfs__website_events
     description: "Staging model for website events. It is used to clean and transform the raw data from the source."
@@ -50,9 +49,8 @@ models:
       - name: campaign_id
         data_tests:
           - relationships:
-              arguments:
-                to: ref('stg_mfs__marketing_campaign_events')
-                field: campaign_id
+              to: ref('stg_mfs__marketing_campaign_events')
+              field: campaign_id
               config:
                 where: "campaign_id is not null"
 
