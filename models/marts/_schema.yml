@@ -52,8 +52,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['Android', 'iOS', 'web', 'Desktop', 'Other']
+              values: ['Android', 'iOS', 'web', 'Desktop', 'Other']
 
       - name: reached_checkout
         data_type: boolean
