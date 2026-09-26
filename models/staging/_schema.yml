@@ -49,9 +49,8 @@ models:
       - name: campaign_id
         data_tests:
           - relationships:
-              arguments:
-                to: ref('stg_mfs__marketing_campaign_events')
-                field: campaign_id
+              to: ref('stg_mfs__marketing_campaign_events')
+              field: campaign_id
               config:
                 where: "campaign_id is not null"
 
