@@ -11,8 +11,7 @@ models:
           - not_null
           - unique
           - accepted_values:
-              arguments:
-                values: ['Android', 'iOS', 'web', 'Desktop', 'Other']
+              values: ['Android', 'iOS', 'web', 'Desktop', 'Other']
 
       - name: reached_checkout
         data_type: int64
