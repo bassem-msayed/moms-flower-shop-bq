@@ -1,27 +1,34 @@
 models:
   - name: stg_mfs__flower_orders2
+    description: "Staging model for flower orders. It is used to clean and transform the raw data from the source."
     columns:
       - name: order_id
+        description: "The unique identifier for each order."
         data_tests:
           - unique
           - not_null
 
       - name: customer_id
+        description: "FK for each customer."
         data_tests:
           - not_null
 
       - name: delivery_id
+        description: "FK for each delivery."
         data_tests:
           - not_null
 
   - name: stg_mfs__marketing_campaign_events
+    description: "Staging model for marketing campaign events. It is used to clean and transform the raw data from the source."
     columns:
       - name: event_id
+        description: "PK for each event."
         data_tests:
           - unique
           - not_null
 
       - name: campaign_name
+        description: "The name of the marketing campaign."
         data_tests:
           - not_null
           - accepted_values:
@@ -29,6 +36,7 @@ models:
                 values: ['facebook_ads_', 'friends_referrals_', 'google_search_', 'instagram_ads_']
 
   - name: stg_mfs__website_events
+    description: "Staging model for website events. It is used to clean and transform the raw data from the source."
     columns:
       - name: event_id
         data_tests:
